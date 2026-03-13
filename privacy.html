@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy — My Maps Route Planner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0b1120; --bg2: #131d30; --bg3: #1a2740;
+      --border: #243552; --teal: #14b8a6; --amber: #f59e0b;
+      --violet: #a78bfa; --text: #e2e8f0; --muted: #64748b; --subtle: #94a3b8;
+    }
+    html { font-family: 'Outfit', sans-serif; font-size: 15px; background: var(--bg); color: var(--text); }
+    body { max-width: 720px; margin: 0 auto; padding: 40px 24px 80px; }
+
+    .page-header {
+      background: linear-gradient(135deg, #0d1f3c, #0b2940 60%, #082030);
+      border: 1px solid var(--border); border-radius: 14px;
+      padding: 24px 28px; margin-bottom: 36px;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .logo { width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, var(--teal), #0891b2); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; box-shadow: 0 0 20px rgba(20,184,166,.4); }
+    .header-text h1 { font-size: 18px; font-weight: 700; }
+    .header-sub { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+    .last-updated { display: inline-block; font-size: 12px; color: var(--muted); background: var(--bg2); border: 1px solid var(--border); border-radius: 6px; padding: 4px 10px; margin-bottom: 28px; }
+
+    section { margin-bottom: 36px; }
+    h2 { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 8px; }
+    p  { font-size: 13px; color: var(--subtle); line-height: 1.8; margin-bottom: 12px; }
+    ul { font-size: 13px; color: var(--subtle); line-height: 1.8; padding-left: 20px; margin-bottom: 12px; }
+    li { margin-bottom: 4px; }
+    strong { color: var(--text); font-weight: 600; }
+
+    .highlight-box { background: var(--bg2); border: 1px solid var(--teal); border-left: 3px solid var(--teal); border-radius: 10px; padding: 16px 18px; margin-bottom: 14px; }
+    .highlight-box p { margin: 0; color: var(--subtle); font-size: 13px; line-height: 1.7; }
+    .highlight-box strong { color: var(--teal); }
+
+    .warn-box { background: rgba(245,158,11,.06); border: 1px solid rgba(245,158,11,.2); border-radius: 10px; padding: 14px 18px; margin-bottom: 14px; font-size: 13px; color: var(--subtle); line-height: 1.7; }
+
+    table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 16px; }
+    th { text-align: left; padding: 8px 12px; background: var(--bg3); color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .05em; border-bottom: 1px solid var(--border); font-weight: 600; }
+    td { padding: 9px 12px; border-bottom: 1px solid rgba(36,53,82,.5); color: var(--subtle); vertical-align: top; }
+    td:first-child { color: var(--text); font-weight: 500; width: 35%; }
+    tr:last-child td { border-bottom: none; }
+
+    footer { text-align: center; font-size: 12px; color: var(--muted); margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); }
+    footer a { color: var(--teal); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<div class="page-header">
+  <div class="logo">🗺️</div>
+  <div class="header-text">
+    <h1>Privacy Policy</h1>
+    <div class="header-sub">My Maps Route Planner — Chrome Extension</div>
+  </div>
+</div>
+
+<span class="last-updated">Last updated: March 2026</span>
+
+<div class="highlight-box">
+  <p><strong>Short version:</strong> This extension does not collect, transmit, or share any personal data. Everything runs locally in your browser. No servers, no tracking, no analytics.</p>
+</div>
+
+<!-- 1 -->
+<section>
+  <h2>📋 Overview</h2>
+  <p>My Maps Route Planner ("the Extension") is a Chrome browser extension that reads map data from Google My Maps pages you have open in your browser and generates navigation links for Google Maps, Apple Maps, and Waze.</p>
+  <p>This Privacy Policy explains what data the Extension accesses, how it is used, and your rights regarding that data.</p>
+</section>
+
+<!-- 2 -->
+<section>
+  <h2>📦 Data We Access</h2>
+
+  <table>
+    <tr>
+      <th>Data</th>
+      <th>Purpose</th>
+      <th>Stored?</th>
+    </tr>
+    <tr>
+      <td>Active tab URL</td>
+      <td>Detect if the current page is a Google My Maps map (checks for google.com/maps/d/)</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Map KML data</td>
+      <td>Read layer names, place names and coordinates from the open My Maps page to generate navigation links</td>
+      <td>No — only held in memory while popup is open</td>
+    </tr>
+    <tr>
+      <td>Map page title</td>
+      <td>Display the map name in the extension popup header</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Stop notes</td>
+      <td>Optional short notes (max 100 characters) added by the user for each stop or place</td>
+      <td>Yes — locally in chrome.storage.local only</td>
+    </tr>
+    <tr>
+      <td>Layer & route data</td>
+      <td>Temporarily written to chrome.storage.local to pass data to the export page</td>
+      <td>Temporary — overwritten on next export</td>
+    </tr>
+  </table>
+</section>
+
+<!-- 3 -->
+<section>
+  <h2>🔒 Data Storage</h2>
+  <p>The Extension uses <strong>chrome.storage.local</strong> exclusively for two purposes:</p>
+  <ul>
+    <li><strong>User notes:</strong> Notes you write for stops and places are saved locally so they persist between browser sessions. They are keyed by map ID (mid) and never leave your device.</li>
+    <li><strong>Export handoff:</strong> When you open the HTML export page, map data is temporarily stored in local storage so the export page can read it. This data is overwritten each time you export and is never transmitted anywhere.</li>
+  </ul>
+  <p>All data stored by the Extension exists solely on your device and is automatically removed when you uninstall the Extension.</p>
+</section>
+
+<!-- 4 -->
+<section>
+  <h2>🚫 Data We Do Not Collect</h2>
+  <ul>
+    <li>We do <strong>not</strong> collect any personally identifiable information</li>
+    <li>We do <strong>not</strong> transmit any data to external servers</li>
+    <li>We do <strong>not</strong> use analytics, crash reporting, or telemetry</li>
+    <li>We do <strong>not</strong> access your Google account credentials or authentication tokens</li>
+    <li>We do <strong>not</strong> store map data beyond the current session (except temporary export handoff)</li>
+    <li>We do <strong>not</strong> share any data with third parties</li>
+  </ul>
+</section>
+
+<!-- 5 -->
+<section>
+  <h2>🌐 Third-Party Services</h2>
+  <p>When you use the Extension's navigation buttons, links open in your browser pointing to third-party services. The Extension does not control and is not responsible for the privacy practices of:</p>
+  <ul>
+    <li><strong>Google Maps</strong> (maps.google.com) — subject to Google's Privacy Policy</li>
+    <li><strong>Apple Maps</strong> (maps.apple.com) — subject to Apple's Privacy Policy</li>
+    <li><strong>Waze</strong> (waze.com) — subject to Waze's Privacy Policy</li>
+    <li><strong>WhatsApp</strong> (wa.me) — subject to Meta's Privacy Policy</li>
+  </ul>
+  <p>The Extension reads KML data from <strong>google.com/maps/d/</strong> using your existing browser session. This is the same request your browser would make when viewing the map — no additional credentials are accessed or stored.</p>
+</section>
+
+<!-- 6 -->
+<section>
+  <h2>🔑 Permissions Explained</h2>
+  <table>
+    <tr>
+      <th>Permission</th>
+      <th>Why it's needed</th>
+    </tr>
+    <tr>
+      <td>activeTab</td>
+      <td>Read the URL and title of the currently active tab to detect My Maps pages and show the map name</td>
+    </tr>
+    <tr>
+      <td>scripting</td>
+      <td>Run a script in the My Maps tab to fetch the map's KML data using the browser's existing session credentials</td>
+    </tr>
+    <tr>
+      <td>clipboardWrite</td>
+      <td>Copy navigation links to clipboard when you click the Copy button</td>
+    </tr>
+    <tr>
+      <td>downloads</td>
+      <td>Save exported Markdown (.md) and iCalendar (.ics) files to your computer</td>
+    </tr>
+    <tr>
+      <td>storage</td>
+      <td>Save your stop notes locally so they persist between sessions</td>
+    </tr>
+    <tr>
+      <td>Host: google.com/maps/d/*</td>
+      <td>Fetch KML data from the My Maps page you have open. Access is limited to My Maps URLs only.</td>
+    </tr>
+  </table>
+</section>
+
+<!-- 7 -->
+<section>
+  <h2>👤 Your Rights & Control</h2>
+  <ul>
+    <li><strong>Delete notes:</strong> Clear notes for any map by emptying the note field. All notes are removed when you uninstall the Extension.</li>
+    <li><strong>Inspect stored data:</strong> Open Chrome DevTools → Application → Storage → Extension Storage to view everything the Extension has stored.</li>
+    <li><strong>Remove all data:</strong> Uninstalling the Extension permanently removes all locally stored data.</li>
+  </ul>
+</section>
+
+<!-- 8 -->
+<section>
+  <h2>👶 Children's Privacy</h2>
+  <p>This Extension is not directed at children under 13 and does not knowingly collect information from children.</p>
+</section>
+
+<!-- 9 -->
+<section>
+  <h2>🔄 Changes to This Policy</h2>
+  <p>If we make material changes to this Privacy Policy, we will update the "Last updated" date at the top of this page. Continued use of the Extension after changes constitutes acceptance of the updated policy.</p>
+</section>
+
+<!-- 10 -->
+<section>
+  <h2>📬 Contact</h2>
+  <p>If you have questions about this Privacy Policy or the Extension's data practices, please open an issue on the project's GitHub repository.</p>
+  <div class="warn-box">
+    This extension is an independent project and is not affiliated with, endorsed by, or associated with Google LLC, Apple Inc., Waze Mobile Ltd., or Meta Platforms Inc.
+  </div>
+</section>
+
+<footer>
+  My Maps Route Planner · Privacy Policy · <a href="help.html">User Guide</a>
+</footer>
+
+</body>
+</html>
