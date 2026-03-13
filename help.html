@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kullanım Kılavuzu — My Maps Route Planner</title>
+  <title>User Guide — My Maps Route Planner</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
@@ -16,19 +16,10 @@
     }
     html { font-family: 'Outfit', sans-serif; font-size: 15px; background: var(--bg); color: var(--text); }
     body { max-width: 780px; margin: 0 auto; padding: 40px 24px 80px; }
-
-    /* ── Header ── */
-    .page-header {
-      background: linear-gradient(135deg, #0d1f3c, #0b2940 60%, #082030);
-      border: 1px solid var(--border); border-radius: 14px;
-      padding: 28px 32px; margin-bottom: 36px;
-      display: flex; align-items: center; gap: 20px;
-    }
+    .page-header { background: linear-gradient(135deg, #0d1f3c, #0b2940 60%, #082030); border: 1px solid var(--border); border-radius: 14px; padding: 28px 32px; margin-bottom: 36px; display: flex; align-items: center; gap: 20px; }
     .logo { width: 52px; height: 52px; border-radius: 14px; background: linear-gradient(135deg, var(--teal), #0891b2); display: flex; align-items: center; justify-content: center; font-size: 26px; flex-shrink: 0; box-shadow: 0 0 24px rgba(20,184,166,.4); }
     .page-header h1 { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
     .page-header p  { font-size: 13px; color: var(--muted); line-height: 1.5; }
-
-    /* ── ToC ── */
     .toc { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 36px; }
     .toc h2 { font-size: 13px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 12px; }
     .toc ol  { list-style: none; display: flex; flex-direction: column; gap: 6px; padding: 0; }
@@ -36,64 +27,43 @@
     .toc li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--border); flex-shrink: 0; }
     .toc a  { color: var(--teal); text-decoration: none; transition: color .15s; }
     .toc a:hover { color: #5eead4; }
-
-    /* ── Sections ── */
     section { margin-bottom: 44px; scroll-margin-top: 20px; }
-    h2.section-title {
-      font-size: 17px; font-weight: 700; margin-bottom: 18px;
-      padding-bottom: 10px; border-bottom: 1px solid var(--border);
-      display: flex; align-items: center; gap: 10px;
-    }
+    h2.section-title { font-size: 17px; font-weight: 700; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
     h2.section-title .icon { font-size: 20px; }
     h3 { font-size: 14px; font-weight: 600; color: var(--subtle); margin: 20px 0 10px; }
     p  { font-size: 13px; color: var(--subtle); line-height: 1.75; margin-bottom: 12px; }
     strong { color: var(--text); font-weight: 600; }
     em { color: var(--muted); font-style: italic; }
-
-    /* ── Cards ── */
     .card { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; margin-bottom: 14px; }
     .card-title { font-size: 13px; font-weight: 600; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
     .card-body  { font-size: 12px; color: var(--muted); line-height: 1.7; }
     .card.teal  { border-left: 3px solid var(--teal); }
     .card.violet{ border-left: 3px solid var(--violet); }
     .card.amber { border-left: 3px solid var(--amber); }
-
-    /* ── Steps ── */
     .steps { display: flex; flex-direction: column; gap: 14px; }
     .step  { display: flex; gap: 14px; align-items: flex-start; }
     .step-num { width: 26px; height: 26px; border-radius: 50%; background: var(--bg3); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: var(--teal); flex-shrink: 0; margin-top: 1px; }
     .step-body { flex: 1; }
     .step-title { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
     .step-desc  { font-size: 12px; color: var(--muted); line-height: 1.65; }
-
-    /* ── Table ── */
     table { width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 14px; }
     th { text-align: left; padding: 8px 12px; background: var(--bg3); color: var(--muted); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: .05em; border-bottom: 1px solid var(--border); }
     td { padding: 8px 12px; border-bottom: 1px solid rgba(36,53,82,.6); color: var(--subtle); vertical-align: top; }
     tr:last-child td { border-bottom: none; }
     td:first-child { color: var(--text); font-weight: 500; white-space: nowrap; }
-
-    /* ── Code block ── */
     .code-block { background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; font-family: monospace; font-size: 12px; color: var(--subtle); line-height: 1.7; margin-bottom: 14px; overflow-x: auto; white-space: pre; }
     .code-block .c-green  { color: var(--green); }
     .code-block .c-red    { color: var(--red); }
     .code-block .c-violet { color: var(--violet); }
     .code-block .c-amber  { color: var(--amber); }
     .code-block .c-muted  { color: var(--muted); }
-
-    /* ── Info box ── */
     .info-box { background: rgba(20,184,166,.07); border: 1px solid rgba(20,184,166,.2); border-radius: 8px; padding: 12px 16px; font-size: 12px; color: var(--subtle); line-height: 1.7; margin-bottom: 14px; display: flex; gap: 10px; }
     .info-box .icon { flex-shrink: 0; font-size: 15px; margin-top: 1px; }
     .warn-box { background: rgba(245,158,11,.07); border: 1px solid rgba(245,158,11,.2); border-radius: 8px; padding: 12px 16px; font-size: 12px; color: var(--subtle); line-height: 1.7; margin-bottom: 14px; display: flex; gap: 10px; }
-
-    /* ── Tip badge ── */
     .badge { display: inline-block; font-size: 10px; padding: 1px 7px; border-radius: 20px; font-weight: 600; vertical-align: middle; margin-left: 4px; }
     .badge.teal  { background: rgba(20,184,166,.15); color: var(--teal); border: 1px solid rgba(20,184,166,.3); }
-    .badge.violet{ background: rgba(167,139,250,.15); color: var(--violet); border: 1px solid rgba(167,139,250,.3); }
-    .badge.amber { background: rgba(245,158,11,.15); color: var(--amber); border: 1px solid rgba(245,158,11,.3); }
-
-    /* ── Footer ── */
     footer { text-align: center; font-size: 12px; color: var(--muted); margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); }
+    footer a { color: var(--teal); text-decoration: none; }
   </style>
 </head>
 <body>
@@ -102,319 +72,192 @@
   <div class="logo">🗺️</div>
   <div>
     <h1>My Maps Route Planner</h1>
-    <p>Kullanım Kılavuzu · Gezi rotalarınızı navigasyona hazırlayın</p>
+    <p>User Guide · Turn your Google My Maps plans into navigation-ready links</p>
   </div>
 </div>
 
-<!-- ── İçindekiler ── -->
 <div class="toc">
-  <h2>İçindekiler</h2>
+  <h2>Contents</h2>
   <ol>
-    <li><a href="#neden">Neden bu eklentiye ihtiyaç var?</a></li>
-    <li><a href="#kurulum">Kurulum</a></li>
-    <li><a href="#kullanim">Adım adım kullanım</a></li>
-    <li><a href="#katmanlar">Katman tipleri</a></li>
-    <li><a href="#ozellikler">Tüm özellikler</a></li>
-    <li><a href="#disa-aktarma">Dışa aktarma (HTML · MD · iCal)</a></li>
-    <li><a href="#notlar">Durak notları</a></li>
-    <li><a href="#mesafe">Mesafe hesabı</a></li>
-    <li><a href="#kisitlamalar">Bilinen kısıtlamalar</a></li>
-    <li><a href="#sss">Sık sorulan sorular</a></li>
+    <li><a href="#why">Why does this extension exist?</a></li>
+    <li><a href="#install">Installation</a></li>
+    <li><a href="#usage">Step-by-step usage</a></li>
+    <li><a href="#layers">Layer types</a></li>
+    <li><a href="#features">All features</a></li>
+    <li><a href="#export">Exports (HTML · MD · iCal)</a></li>
+    <li><a href="#notes">Stop notes</a></li>
+    <li><a href="#distance">Distance calculation</a></li>
+    <li><a href="#limits">Known limitations</a></li>
+    <li><a href="#faq">FAQ</a></li>
   </ol>
 </div>
 
-
-<!-- ── 1. Neden ── -->
-<section id="neden">
-  <h2 class="section-title"><span class="icon">🤔</span>Neden bu eklentiye ihtiyaç var?</h2>
-
-  <p>Trabzon'a, Çanakkale'ye ya da herhangi bir şehre gezi planlıyorsunuz. Günler öncesinden masaüstünde <strong>Google MyMaps</strong>'te harika bir plan hazırlıyorsunuz — günlere göre katmanlar, işaretli mekanlar, çizilmiş rotalar.</p>
-  <p>Ama seyahatte telefonu çıkardığınızda Google Maps mobil uygulaması bu planı <strong>doğrudan navigasyona açamıyor.</strong> Her mekanı tek tek yeniden arıyorsunuz ya da rotayı baştan kuruyorsunuz.</p>
-
+<section id="why">
+  <h2 class="section-title"><span class="icon">🤔</span>Why does this extension exist?</h2>
+  <p>You've spent hours planning a trip on <strong>Google My Maps</strong> — layers for each day, marked places, drawn routes. But when you pull out your phone on the road, Google Maps mobile <strong>can't open your My Maps plan for navigation.</strong> You end up re-searching every place from scratch.</p>
   <div class="card amber">
-    <div class="card-title">😤 Problem</div>
-    <div class="card-body">Google MyMaps bir <em>planlama aracı</em>, Google Maps ise bir <em>navigasyon aracı</em>. İkisi arasında doğrudan "rotayı aktar" köprüsü yok.</div>
+    <div class="card-title">😤 The Problem</div>
+    <div class="card-body">Google My Maps is a <em>planning tool</em>. Google Maps is a <em>navigation tool</em>. There is no built-in bridge between them.</div>
   </div>
   <div class="card teal">
-    <div class="card-title">✅ Çözüm</div>
-    <div class="card-body">Bu eklenti tam o köprüyü kuruyor. MyMaps'teki KML verisini okuyarak Google Maps navigasyon linklerini otomatik üretiyor.</div>
+    <div class="card-title">✅ The Solution</div>
+    <div class="card-body">This extension builds that bridge. It reads the KML data from your open My Maps page and automatically generates shareable Google Maps navigation links.</div>
   </div>
 </section>
 
-
-<!-- ── 2. Kurulum ── -->
-<section id="kurulum">
-  <h2 class="section-title"><span class="icon">🛠️</span>Kurulum</h2>
-
+<section id="install">
+  <h2 class="section-title"><span class="icon">🛠️</span>Installation</h2>
   <div class="steps">
-    <div class="step">
-      <div class="step-num">1</div>
-      <div class="step-body">
-        <div class="step-title">ZIP dosyasını indirin ve kalıcı bir klasöre çıkarın</div>
-        <div class="step-desc">Bu klasörü silmeyin — Chrome eklentinizi buradan okumaya devam eder.</div>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num">2</div>
-      <div class="step-body">
-        <div class="step-title">Chrome'da geliştirici modunu açın</div>
-        <div class="step-desc">Adres çubuğuna <strong>chrome://extensions</strong> yazın, sağ üstteki <strong>Geliştirici modu</strong> anahtarını açın.</div>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num">3</div>
-      <div class="step-body">
-        <div class="step-title">"Paketlenmemiş öğe yükle" ile klasörü seçin</div>
-        <div class="step-desc">Araç çubuğunda eklenti simgesi belirir. Görünmüyorsa yapboz ikonuna (🧩) tıklayıp sabitleyin.</div>
-      </div>
-    </div>
+    <div class="step"><div class="step-num">1</div><div class="step-body"><div class="step-title">Download the ZIP and extract it to a permanent folder</div><div class="step-desc">Do not delete this folder — Chrome loads the extension from it continuously.</div></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-body"><div class="step-title">Enable Developer Mode in Chrome</div><div class="step-desc">Type <strong>chrome://extensions</strong> in the address bar and toggle on <strong>Developer mode</strong> in the top-right corner.</div></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-body"><div class="step-title">Click "Load unpacked" and select the folder</div><div class="step-desc">The extension icon appears in your toolbar. If hidden, click the puzzle icon (🧩) and pin it.</div></div></div>
   </div>
-
   <div class="warn-box" style="margin-top:18px">
     <span class="icon">⚠️</span>
-    <span>Güncelleme yaparken eklentiyi önce <strong>kaldırıp</strong> yeniden yükleyin. Yeni izinler sadece bu şekilde aktif olur.</span>
+    <span>When updating: <strong>remove the extension first</strong>, then re-add it. New permissions only activate after a fresh install.</span>
   </div>
 </section>
 
-
-<!-- ── 3. Kullanım ── -->
-<section id="kullanim">
-  <h2 class="section-title"><span class="icon">📱</span>Adım adım kullanım</h2>
-
-  <h3>Masaüstünde — Hazırlık</h3>
+<section id="usage">
+  <h2 class="section-title"><span class="icon">📱</span>Step-by-step usage</h2>
+  <h3>On Desktop — Planning</h3>
   <div class="steps">
-    <div class="step">
-      <div class="step-num">1</div>
-      <div class="step-body">
-        <div class="step-title">MyMaps'te planınızı hazırlayın</div>
-        <div class="step-desc"><a href="https://www.google.com/maps/d/" target="_blank" style="color:var(--teal)">google.com/maps/d/</a> adresinde her gün veya tema için katman oluşturun. Mekan işaretleri (<strong>📍 Mekan</strong>) veya yol tarifi rotaları (<strong>🛣️ Rota</strong>) ekleyin.</div>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num">2</div>
-      <div class="step-body">
-        <div class="step-title">Eklentiyi açın</div>
-        <div class="step-desc">Haritanın açık olduğu sekmede eklenti ikonuna tıklayın. Katmanlar otomatik okunur, harita adı başlıkta görünür.</div>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num">3</div>
-      <div class="step-body">
-        <div class="step-title">Rotayı düzenleyin (isteğe bağlı)</div>
-        <div class="step-desc">▲ ▼ butonlarıyla durak sırasını değiştirin. Her durağın altındaki alana not ekleyin.</div>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num">4</div>
-      <div class="step-body">
-        <div class="step-title">Ulaşım modunu seçin</div>
-        <div class="step-desc">Her rota kartında 🚗 / 🚶 / 🚌 / 🚲 seçin. Link anında güncellenir.</div>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num">5</div>
-      <div class="step-body">
-        <div class="step-title">Linkleri alın ve paylaşın</div>
-        <div class="step-desc">Kopyala, WhatsApp, QR veya doğrudan aç. Tüm rotaları bir arada almak için alt çubukta 📋 Kopyala.</div>
-      </div>
-    </div>
+    <div class="step"><div class="step-num">1</div><div class="step-body"><div class="step-title">Build your plan in My Maps</div><div class="step-desc">Go to <a href="https://www.google.com/maps/d/" target="_blank" style="color:var(--teal)">google.com/maps/d/</a> and create a layer for each day or theme. Add place markers (<strong>📍 Places</strong>) or directions routes (<strong>🛣️ Route</strong>).</div></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-body"><div class="step-title">Open the extension</div><div class="step-desc">Click the extension icon on the My Maps tab. Layers are read automatically and the map name appears in the popup header.</div></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-body"><div class="step-title">Customize your route (optional)</div><div class="step-desc">Use ▲ ▼ to reorder stops. Click 📝 next to any stop or place to add a note (max 100 characters).</div></div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-body"><div class="step-title">Select travel mode</div><div class="step-desc">Choose 🚗 / 🚶 / 🚌 / 🚲 on each route card. The navigation link updates instantly.</div></div></div>
+    <div class="step"><div class="step-num">5</div><div class="step-body"><div class="step-title">Get your links and share</div><div class="step-desc">Use Copy, WhatsApp, QR, or open directly. Use 📋 Copy all in the bottom bar to grab every route at once.</div></div></div>
   </div>
-
-  <h3>Mobilde — Seyahat sırasında</h3>
-  <p>Aldığınız linke tıklayın ya da QR kodu telefon kamerasıyla okutun. Google Maps navigasyon ekranı <strong>durakların doğru isimleriyle</strong> açılır.</p>
-
-  <div class="code-block"><span class="c-muted">MyMaps'teki isim          Google Maps'te görünen</span>
-<span class="c-green">A → Grand Anzac Hotel</span>  =  <span class="c-green">A → Grand Anzac Hotel  ✅</span>
-<span class="c-green">B → Troya Antik Kenti</span>  =  <span class="c-green">B → Troya Antik Kenti  ✅</span>
-<span class="c-red">A → 40.1490,26.4021</span>    =  <span class="c-red">A → Yakınındaki benzin ist. ❌</span></div>
-
+  <h3>On Mobile — During the Trip</h3>
+  <p>Tap the link or scan the QR code. Google Maps opens with the <strong>correct place names</strong> ready to navigate.</p>
+  <div class="code-block"><span class="c-muted">Name in My Maps              What Google Maps shows</span>
+<span class="c-green">A → Grand Anzac Hotel</span>   =  <span class="c-green">A → Grand Anzac Hotel   ✅</span>
+<span class="c-green">B → Troy Ancient City</span>   =  <span class="c-green">B → Troy Ancient City   ✅</span>
+<span class="c-red">A → 40.1490,26.4021</span>     =  <span class="c-red">A → Nearby gas station   ❌</span></div>
   <div class="info-box">
     <span class="icon">💡</span>
-    <span><strong>QR kodu nasıl çalışır?</strong> QR kodu masaüstü ekranında görünür. Telefon kamerasını tutun — Google Maps telefonda otomatik açılır. Telefonda eklenti gerekmez.</span>
+    <span><strong>QR code:</strong> Shows on your desktop screen. Point your phone camera at it — Google Maps opens automatically on your phone. No extension needed on mobile.</span>
   </div>
 </section>
 
-
-<!-- ── 4. Katman Tipleri ── -->
-<section id="katmanlar">
-  <h2 class="section-title"><span class="icon">🏷️</span>Katman tipleri</h2>
-
+<section id="layers">
+  <h2 class="section-title"><span class="icon">🏷️</span>Layer types</h2>
   <div class="card teal">
-    <div class="card-title">📍 Mekan Katmanı</div>
-    <div class="card-body">Haritaya iğne koyduğunuz yerler. Sıra önemli değil; henüz kesinleşmemiş ziyaret planı. Her isme tıklayınca Google Maps'te bilgi sayfası açılır. Navigasyon linki üretilmez.</div>
+    <div class="card-title">📍 Places Layer</div>
+    <div class="card-body">Pins dropped on the map — a list of spots you might visit. Order doesn't matter. Click any name to open its Google Maps info page. No navigation link is generated.</div>
   </div>
-
   <div class="card violet">
-    <div class="card-title">🛣️ Rota Katmanı</div>
-    <div class="card-body">MyMaps'in "Yol tarifi ekle" özelliğiyle oluşturulan katmanlar. A, B, C... şeklinde sıralı duraklar içerir. Navigasyon linki, ulaşım modu seçici ve durak yönetimi mevcuttur.</div>
+    <div class="card-title">🛣️ Route Layer</div>
+    <div class="card-body">Layers created with My Maps' "Add directions" tool. Contains ordered stops A, B, C... with a drawn path. Includes navigation link, travel mode selector, and stop management.</div>
   </div>
-
-  <h3>Rota katmanı nasıl oluşturulur?</h3>
+  <h3>How to create a route layer</h3>
   <div class="steps">
-    <div class="step"><div class="step-num">1</div><div class="step-body"><div class="step-desc">MyMaps'te <strong>+ Katman Ekle</strong></div></div></div>
-    <div class="step"><div class="step-num">2</div><div class="step-body"><div class="step-desc">Katmanı adlandırın</div></div></div>
-    <div class="step"><div class="step-num">3</div><div class="step-body"><div class="step-desc">Araç çubuğundan <strong>Yol tarifi ekle</strong> (ok simgesi) seçin</div></div></div>
-    <div class="step"><div class="step-num">4</div><div class="step-body"><div class="step-desc">Ulaşım modu seçin → durakları sırayla ekleyin</div></div></div>
+    <div class="step"><div class="step-num">1</div><div class="step-body"><div class="step-desc">In My Maps, click <strong>+ Add layer</strong></div></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-body"><div class="step-desc">Give the layer a name</div></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-body"><div class="step-desc">Select <strong>Add directions</strong> (arrow icon) from the toolbar</div></div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-body"><div class="step-desc">Choose travel mode → add stops in order</div></div></div>
   </div>
 </section>
 
-
-<!-- ── 5. Özellikler ── -->
-<section id="ozellikler">
-  <h2 class="section-title"><span class="icon">✨</span>Tüm özellikler</h2>
-
+<section id="features">
+  <h2 class="section-title"><span class="icon">✨</span>All features</h2>
   <table>
-    <tr><th>Özellik</th><th>Açıklama</th></tr>
-    <tr><td>Otomatik KML okuma</td><td>Haritanın KML verisini arka planda çeker ve parse eder</td></tr>
-    <tr><td>Doğru mekan isimleri</td><td>Koordinat yerine isim tabanlı URL — Maps'te doğru isim görünür</td></tr>
-    <tr><td>Ulaşım modu</td><td>Her rota için 🚗 Araba / 🚶 Yaya / 🚌 Toplu / 🚲 Bisiklet</td></tr>
-    <tr><td>↑↓ Durak sıralama</td><td>Ok butonlarıyla sıra değiştirin, link anında güncellenir</td></tr>
-    <tr><td>Durak notları</td><td>Her durak için not — popup kapatılsa da korunur, export'a yansır</td></tr>
-    <tr><td>Tıklanabilir mekanlar</td><td>📍 katmanlarında isme tıklayınca Google Maps bilgi sayfası açılır</td></tr>
-    <tr><td>QR kod</td><td>Masaüstünde göster, telefon kamerasıyla oku → Maps açılır</td></tr>
-    <tr><td>WhatsApp paylaşımı</td><td>Tek tıkla WhatsApp mesajı hazırlar</td></tr>
-    <tr><td>Apple Maps <span class="badge teal">YENİ</span></td><td>İlk → son durak arası Apple Maps'te açılır</td></tr>
-    <tr><td>Waze <span class="badge teal">YENİ</span></td><td>Son durağa Waze navigasyonu açar</td></tr>
-    <tr><td>HTML export</td><td>SVG önizlemeli, mesafe bilgili, tıklanabilir linkli web sayfası</td></tr>
-    <tr><td>Markdown export</td><td>Obsidian uyumlu .md dosyası</td></tr>
-    <tr><td>iCal export <span class="badge teal">YENİ</span></td><td>.ics dosyası — her durak takvim etkinliği olarak içe aktarılır</td></tr>
-    <tr><td>Tümünü kopyala</td><td>Tüm rota linklerini tek blokta kopyalar</td></tr>
-    <tr><td>Mesafe hesabı</td><td>Duraklar arası ve toplam km (Haversine / kuş uçuşu)</td></tr>
-    <tr><td>Çok parçalı rota</td><td>10'dan fazla durak varsa otomatik Bölüm 1, Bölüm 2... bölünür</td></tr>
-    <tr><td>Kalıcı notlar</td><td>chrome.storage ile saklanır — uzantı kaldırılana kadar silinmez</td></tr>
+    <tr><th>Feature</th><th>Description</th></tr>
+    <tr><td>Automatic KML reading</td><td>Fetches and parses the map's KML data in the background</td></tr>
+    <tr><td>Correct place names</td><td>Name-based URLs — Google Maps shows the right label, not the nearest road</td></tr>
+    <tr><td>Travel mode</td><td>Per-route: 🚗 Drive / 🚶 Walk / 🚌 Transit / 🚲 Cycle</td></tr>
+    <tr><td>↑↓ Stop reordering</td><td>Move stops with arrow buttons; link regenerates instantly</td></tr>
+    <tr><td>Stop &amp; place notes</td><td>Notes survive popup close; reflected in all exports</td></tr>
+    <tr><td>Hover tooltip</td><td>Hover any name to see its note in a tooltip bubble</td></tr>
+    <tr><td>Clickable places</td><td>Tap any name in a 📍 layer → opens Google Maps info page</td></tr>
+    <tr><td>QR code</td><td>Show on desktop, scan with phone → Maps opens</td></tr>
+    <tr><td>WhatsApp sharing</td><td>One-click WhatsApp message with the route link</td></tr>
+    <tr><td>Apple Maps 🍎</td><td>Opens first → last stop in Apple Maps</td></tr>
+    <tr><td>Waze 🚗</td><td>Navigates to the last stop in Waze</td></tr>
+    <tr><td>HTML export</td><td>Interactive page with SVG preview, distances, and clickable links</td></tr>
+    <tr><td>Markdown export</td><td>Obsidian-compatible .md with frontmatter and distances</td></tr>
+    <tr><td>iCal export</td><td>.ics file — each stop becomes a calendar event</td></tr>
+    <tr><td>Copy all</td><td>Copies every route link in one block</td></tr>
+    <tr><td>Distance calculation</td><td>Per-segment and total km (Haversine / crow-flies)</td></tr>
+    <tr><td>Auto-split routes</td><td>10+ stops split automatically into Part 1, Part 2...</td></tr>
+    <tr><td>Persistent notes</td><td>Stored with chrome.storage — never lost until extension is removed</td></tr>
   </table>
 </section>
 
-
-<!-- ── 6. Dışa Aktarma ── -->
-<section id="disa-aktarma">
-  <h2 class="section-title"><span class="icon">📤</span>Dışa aktarma</h2>
-
+<section id="export">
+  <h2 class="section-title"><span class="icon">📤</span>Exports</h2>
   <div class="card violet">
-    <div class="card-title">🌐 HTML Dışa Aktarma</div>
-    <div class="card-body">
-      Tüm planı tek bir web sayfası olarak yeni sekmede açar.<br><br>
-      • Rota şeması (SVG önizleme — başlangıç 🟢, bitiş 🔴)<br>
-      • Toplam ve duraklar arası mesafe<br>
-      • Durak listesi (notlar dahil)<br>
-      • Tıklanabilir Google Maps navigasyon linkleri<br><br>
-      <em>"Sayfayı Farklı Kaydet" ile .html olarak saklayabilir, çevrimdışı da kullanabilirsiniz.</em>
-    </div>
+    <div class="card-title">🌐 HTML Export</div>
+    <div class="card-body">Opens your full trip plan as an interactive page in a new tab.<br><br>• SVG route preview (🟢 start, 🔴 end, waypoints marked)<br>• Total and per-segment distances<br>• Stop list with notes<br>• Clickable Google Maps, Apple Maps, Waze buttons<br>• Reorder stops and change travel mode directly on the page<br><br><em>Use "Save Page As" to keep an offline .html copy.</em></div>
   </div>
-
   <div class="card teal">
-    <div class="card-title">📝 Markdown (Obsidian) Dışa Aktarma</div>
-    <div class="card-body">
-      Obsidian, Notion, Logseq uyumlu .md dosyası indirir.<br><br>
-      YAML frontmatter (title, date, tags), duraklar arası mesafe, notlar ve navigasyon linkleri içerir.
-    </div>
+    <div class="card-title">📝 Markdown Export</div>
+    <div class="card-body">Downloads an Obsidian / Notion / Logseq compatible .md file with YAML frontmatter, stop list, distances, notes, and navigation links.</div>
   </div>
-
   <div class="card amber">
-    <div class="card-title">📅 iCal Dışa Aktarma</div>
-    <div class="card-body">
-      .ics dosyası indirir. Her durak ayrı takvim etkinliği olarak gelir.<br><br>
-      Tarihler başlangıçta bugüne ayarlanır — takvime aktardıktan sonra istediğiniz güne taşıyın.<br><br>
-      Google Calendar, Apple Takvim ve Outlook ile uyumludur.
-    </div>
+    <div class="card-title">📅 iCal Export</div>
+    <div class="card-body">Downloads a .ics file. Each stop becomes a calendar event with coordinates and your note in the description. Dates default to today — move them after importing. Compatible with Google Calendar, Apple Calendar, and Outlook.</div>
   </div>
 </section>
 
-
-<!-- ── 7. Notlar ── -->
-<section id="notlar">
-  <h2 class="section-title"><span class="icon">📝</span>Durak notları</h2>
-
-  <p>Her rota durağının altında ince bir <strong>"Not ekle…"</strong> alanı bulunur.</p>
-
+<section id="notes">
+  <h2 class="section-title"><span class="icon">📝</span>Stop notes</h2>
+  <p>Every stop and place has a <strong>📝 icon button</strong>. Click it to open an inline input (max 100 characters). Press Enter or Escape to close. Stops with a note show a highlighted icon. Hover over any name to see its note as a tooltip.</p>
   <div class="info-box">
     <span class="icon">💾</span>
-    <span>Notlar <strong>chrome.storage.local</strong> ile kaydedilir. Harita adresine (mid) göre gruplandırılır — popup kapatılsa, Chrome kapansa bile silinmez. Yalnızca eklenti kaldırıldığında temizlenir.</span>
+    <span>Notes are saved with <strong>chrome.storage.local</strong>, grouped by map ID. They survive popup close, browser restart, and system reboot. Cleared only when the extension is uninstalled.</span>
   </div>
+  <p>Notes appear in all exports:</p>
+  <div class="code-block"><span class="c-muted">HTML export:</span>  <span class="c-violet">📝 Allow 2 hours here</span>  (italic purple)
 
-  <p>Notlar şu export'larda görünür:</p>
+<span class="c-muted">MD export:</span>   <span class="c-green">1. 🟢 **Grand Anzac Hotel**</span> <span class="c-amber">*(Breakfast included, leave by 09:00)*</span>
 
-  <div class="code-block"><span class="c-muted">HTML export:</span>  <span class="c-violet">📝 Buraya 2 saat ayırın</span>  (mor italik)
-
-<span class="c-muted">MD export:</span>   <span class="c-green">1. 🟢 **Grand Anzac Hotel**</span> <span class="c-amber">*(Kahvaltı dahil, 09:00'da çık)*</span>
-
-<span class="c-muted">iCal:</span>       DESCRIPTION alanında görünür</div>
+<span class="c-muted">iCal:</span>       Shown in the DESCRIPTION field of the calendar event</div>
 </section>
 
-
-<!-- ── 8. Mesafe ── -->
-<section id="mesafe">
-  <h2 class="section-title"><span class="icon">📏</span>Mesafe hesabı</h2>
-
-  <p>Duraklar arası ve toplam mesafe <strong>Haversine formülü</strong> ile hesaplanır. API gerekmez, tamamen yerel çalışır.</p>
-
+<section id="distance">
+  <h2 class="section-title"><span class="icon">📏</span>Distance calculation</h2>
+  <p>Distances are calculated with the <strong>Haversine formula</strong> — fully local, no API key needed.</p>
   <div class="warn-box">
     <span class="icon">⚠️</span>
-    <span><strong>Kuş uçuşu mesafedir.</strong> Gerçek yol mesafesi genellikle %20–40 daha fazladır. Bu değerler fikir vermek içindir; kesin navigasyon süresi için Google Maps'i kullanın.</span>
+    <span><strong>These are crow-flies distances.</strong> Actual road distance is typically 20–40% longer. Use these figures as a rough guide only.</span>
   </div>
-
-  <p>HTML export'ta her durak arası mesafe şöyle görünür:</p>
   <div class="code-block"><span class="c-green">● Grand Anzac Hotel</span>
 <span class="c-muted">    ↓ 8.2 km</span>
-<span class="c-violet">● Troya Antik Kenti</span>
+<span class="c-violet">● Troy Ancient City</span>
 <span class="c-muted">    ↓ 12.7 km</span>
-<span class="c-red">● Kepez Halk Bahçesi</span>
+<span class="c-red">● Kepez Public Park</span>
 
-<span class="c-amber">📏 Toplam: 20.9 km</span> <span class="c-muted">(kuş uçuşu — gerçek yol %20-40 daha uzun olabilir)</span></div>
+<span class="c-amber">📏 Total: 20.9 km</span> <span class="c-muted">(crow-flies — actual road may be 20–40% longer)</span></div>
 </section>
 
-
-<!-- ── 9. Kısıtlamalar ── -->
-<section id="kisitlamalar">
-  <h2 class="section-title"><span class="icon">⚠️</span>Bilinen kısıtlamalar</h2>
-
+<section id="limits">
+  <h2 class="section-title"><span class="icon">⚠️</span>Known limitations</h2>
   <table>
-    <tr><th>Kısıt</th><th>Açıklama</th></tr>
-    <tr><td>Max 10 durak/rota</td><td>Google Maps limiti. Eklenti otomatik Bölüm 1, Bölüm 2... olarak böler.</td></tr>
-    <tr><td>Apple Maps waypoint yok</td><td>Apple Maps web API'si çoklu durak desteklemez — başlangıç → bitiş açılır.</td></tr>
-    <tr><td>Waze tek hedef</td><td>Waze yalnızca son durağa navigasyon açar.</td></tr>
-    <tr><td>Sadece Chrome</td><td>Chrome ve Chromium tabanlı tarayıcılarda çalışır (Edge, Brave, Arc...).</td></tr>
-    <tr><td>Sadece masaüstü</td><td>Mobil tarayıcılarda eklenti desteği yoktur.</td></tr>
-    <tr><td>İnternet gerekli</td><td>KML verisi Google sunucularından çekilir.</td></tr>
-    <tr><td>Kuş uçuşu mesafe</td><td>Gerçek yol mesafesi değildir.</td></tr>
-    <tr><td>iCal tarihleri</td><td>Tarihler bugüne ayarlanır; takvime aktardıktan sonra düzenleyin.</td></tr>
+    <tr><th>Limitation</th><th>Details</th></tr>
+    <tr><td>Max 10 stops/route</td><td>Google Maps limit. Extension auto-splits into Part 1, Part 2...</td></tr>
+    <tr><td>Apple Maps: 2 stops</td><td>Web API doesn't support waypoints — opens start → end only.</td></tr>
+    <tr><td>Waze: single destination</td><td>Navigates to the last stop only.</td></tr>
+    <tr><td>Chrome only</td><td>Works on Chromium-based browsers (Edge, Brave, Arc...).</td></tr>
+    <tr><td>Desktop only</td><td>Mobile browsers don't support extensions.</td></tr>
+    <tr><td>Internet required</td><td>KML data is fetched from Google's servers.</td></tr>
+    <tr><td>Crow-flies distance</td><td>Not actual road distance — for reference only.</td></tr>
+    <tr><td>iCal dates</td><td>Default to today; adjust after importing to your calendar.</td></tr>
   </table>
 </section>
 
-
-<!-- ── 10. SSS ── -->
-<section id="sss">
-  <h2 class="section-title"><span class="icon">❓</span>Sık sorulan sorular</h2>
-
-  <div class="card">
-    <div class="card-title">Haritam private/gizli, çalışır mı?</div>
-    <div class="card-body">Evet. Eklenti Google hesabınızın tarayıcı oturumunu kullanır. Haritanızı tarayıcıda görebiliyorsanız eklenti de görebilir.</div>
-  </div>
-  <div class="card">
-    <div class="card-title">Durak sırasını değiştirince MyMaps'te de değişiyor mu?</div>
-    <div class="card-body">Hayır. Sıra değişikliği yalnızca eklentide ve üretilen linkte geçerlidir; orijinal haritanız değişmez.</div>
-  </div>
-  <div class="card">
-    <div class="card-title">Notlarım nerede saklanıyor?</div>
-    <div class="card-body">chrome.storage.local'da — sadece kendi bilgisayarınızda, tarayıcı profilinizde. Uzantı kaldırılana kadar silinmez. Farklı haritaların notları birbirine karışmaz.</div>
-  </div>
-  <div class="card">
-    <div class="card-title">Mobilden eklentiyi kullanabilir miyim?</div>
-    <div class="card-body">Hayır, eklentiler yalnızca masaüstü Chrome'da çalışır. Eklentiyi masaüstünde kullanıp linkleri telefona gönderin ya da QR kodu okutun.</div>
-  </div>
-  <div class="card">
-    <div class="card-title">Google Maps'te yanlış yer açılıyorsa?</div>
-    <div class="card-body">MyMaps'teki mekan adının Google Maps'te aranabilir olduğundan emin olun. Çok genel isimler (örn. "Otel") yerine tam adı kullanın.</div>
-  </div>
-  <div class="card">
-    <div class="card-title">Eklentiyi güncellemek için?</div>
-    <div class="card-body">Yeni ZIP'i indirin, eski klasörün içeriğini değiştirin. Ardından chrome://extensions sayfasında eklentiyi <strong>kaldırıp yeniden yükleyin</strong> (izin değişiklikleri için gereklidir).</div>
-  </div>
+<section id="faq">
+  <h2 class="section-title"><span class="icon">❓</span>FAQ</h2>
+  <div class="card"><div class="card-title">My map is private — will it work?</div><div class="card-body">Yes. The extension uses your existing browser session. If you can see the map in your browser, the extension can read it.</div></div>
+  <div class="card"><div class="card-title">Does reordering stops change my original My Maps?</div><div class="card-body">No. Changes are local to the extension and the generated link only. Your original map is never modified.</div></div>
+  <div class="card"><div class="card-title">Where are my notes stored?</div><div class="card-body">In chrome.storage.local — only on your computer, in your browser profile. Notes for different maps are kept separate. Removed only when you uninstall the extension.</div></div>
+  <div class="card"><div class="card-title">Can I use this on mobile?</div><div class="card-body">No, extensions only work in desktop Chrome. Use the extension on desktop, then send the links to your phone or scan the QR code.</div></div>
+  <div class="card"><div class="card-title">Google Maps opens the wrong place — what do I do?</div><div class="card-body">Use the full, specific place name in My Maps (e.g. "Troy Ancient City Museum" rather than just "Museum"). Vague names may match the wrong location.</div></div>
+  <div class="card"><div class="card-title">How do I update the extension?</div><div class="card-body">Download the new ZIP and replace the folder contents. Then go to chrome://extensions and <strong>remove and re-add</strong> the extension for new permissions to take effect.</div></div>
 </section>
 
-
 <footer>
-  My Maps Route Planner · Gezi planlamanızı daha akıllı hale getirin
+  My Maps Route Planner &nbsp;·&nbsp; <a href="https://bilgenotlar.github.io/my_maps_route_planner/privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="https://github.com/bilgenotlar/my_maps_route_planner">GitHub</a>
 </footer>
 
 </body>
